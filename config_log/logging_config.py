@@ -11,7 +11,7 @@ LOGGING_CONFIG = {
             'format': '%(asctime)s - %(module)s - %(lineno)d - %(message)s',
         },
         'simple': {
-            'format': '%(levelname)s - %(message)s',
+            'format': '%(asctime)s - %(message)s',
         },
     },
     'handlers': {
@@ -26,6 +26,12 @@ LOGGING_CONFIG = {
             'formatter': 'detailed',
             'delay': 'True',
         },
+        "file_info": {
+            'class': 'logging.FileHandler',
+            'filename': 'info.log',
+            'formatter': 'simple',
+            'delay': 'True',
+        }
     },
     'loggers': {
         'log_error': {
@@ -37,8 +43,12 @@ LOGGING_CONFIG = {
                 'handlers': ['console'],
                 'propagate': False,
                 'level': 'DEBUG',
-            },
-
+       },
+       'log_info': {
+            'handlers': ['file_info'],
+           'propagate': False,
+           'level': 'INFO'
+       },
     },
 }
 

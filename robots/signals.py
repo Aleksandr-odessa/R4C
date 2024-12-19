@@ -11,7 +11,7 @@ from .models import Robot
 def verifications(sender, instance, **kwargs):
     if not all([instance.model, instance.version, instance.created]):
         raise ValidationError("Model, version, and created fields must be provided.")
-    if len(instance.model) != 2:
+    elif len(instance.model) != 2:
         raise ValidationError('The length of the "model" field must be only 2 characters.')
     elif len(instance.version) != 2:
         raise ValidationError('The length of the "version" field must be only 2 characters.')

@@ -1,5 +1,6 @@
-import pandas as pd
 from datetime import timedelta
+
+import pandas as pd
 from django.utils import timezone
 
 from robots.models import Robot
