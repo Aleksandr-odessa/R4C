@@ -1,2 +1,9 @@
 /.idea/
 /.venv/
+/.venv1/
+/proba.py
+/output_file.xlsx
+/output.xlsx
+/db.sqlite3
+/error.log
+/info.log
